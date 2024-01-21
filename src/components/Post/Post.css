@@ -1,0 +1,37 @@
+.post {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 16px;
+}
+
+.post__avatar {
+  grid-column: 1;
+  border: 1px solid #f1f1f2;
+  border-radius: 50%;
+}
+
+.post__content {
+  grid-column: 2 / 6;
+  padding-top: 16px;
+}
+
+.post__author {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #1c1c1c;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.post__author:hover {
+  text-decoration: underline;
+}
+
+.post__actions {
+  grid-column: 6;
+  align-self: end;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
