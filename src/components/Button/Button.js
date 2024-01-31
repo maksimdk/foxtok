@@ -13,7 +13,7 @@ export const Button = ({
   children,
   ...props
 }) => {
-  let colors = {
+  const colors = {
     primary: color === 'primary',
   };
 
