@@ -1,4 +1,4 @@
-import { React, Fragment } from 'react';
+import React, { createRef, Fragment } from 'react';
 
 import { Sprite } from '../Sprite';
 import { Header } from '../Header';
@@ -11,6 +11,19 @@ import { posts } from './config';
 import './App.css';
 
 export const App = () => {
+  const imgRef = createRef();
+
+  const showImg = () => {
+    console.log(imgRef);
+  };
+
+  const initRef = (ref) => {
+    if (!imgRef.current) {
+      imgRef.current = [];
+    }
+    imgRef.current.push(ref);
+  };
+
   return (
     <>
       <Sprite />
@@ -20,7 +33,7 @@ export const App = () => {
         <section className="content">
           {posts.map((data, index) => (
             <Fragment key={data.id}>
-              <Post {...data} />
+              <Post ref={initRef} {...data} showImg={showImg} />
               {posts.length - 1 > index ? <hr /> : null}
             </Fragment>
           ))}
