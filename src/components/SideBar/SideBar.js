@@ -12,7 +12,7 @@ export const SideBar = () => {
     <aside className="side-bar">
       <div>
         <nav className="menu">
-          {menu.map(({ id, title, Icon, upper, color, href }) => (
+          {menu.map(({ id, title, Icon, color, href }) => (
             <Button
               key={id}
               href={href}

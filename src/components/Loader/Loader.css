@@ -1,0 +1,9 @@
+.loader {
+  margin-top: 50%;
+  text-align: center;
+}
+
+.loader__image {
+  width: 120px;
+  height: 120px;
+}
