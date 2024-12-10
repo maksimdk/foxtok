@@ -1,16 +1,31 @@
+import React, { Fragment } from 'react';
+
+import { Sprite } from '../Sprite';
+import { Header } from '../Header';
+import { Container } from '../Container';
+import { SideBar } from '../SideBar';
+import { Post } from '../Post';
+
+import { posts } from './config';
+
 import './App.css';
 
 export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Sprite />
+      <Header />
+      <Container className="main">
+        <SideBar />
+        <section className="content">
+          {posts.map((data, index) => (
+            <Fragment key={data.id}>
+              <Post {...data} />
+              {posts.length - 1 > index ? <hr /> : null}
+            </Fragment>
+          ))}
+        </section>
+      </Container>
+    </>
   );
 };
